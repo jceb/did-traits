@@ -13,42 +13,42 @@
     "modifiable": {
       "type": "boolean",
       "title": "Modifiable",
-      "description": "DID Documents can be modified."
+      "description": "DID Documents are modifiable, see https://w3c.github.io/did-core/#method-operations."
     },
     "service_endpoints": {
       "type": "boolean",
       "title": "Service Endpoints",
-      "description": "Service endpoints can be added to DID Documents."
+      "description": "Service endpoints are modifiable, see https://w3c.github.io/did-core/#services."
     },
     "deactivatable": {
       "type": "boolean",
       "title": "Deactivatable",
-      "description": "DID Documents can be deactivated."
+      "description": "DIDs are deactivatable, see https://w3c.github.io/did-core/#method-operations."
     },
     "deletable": {
       "type": "boolean",
       "title": "Deletable",
-      "description": "DID Documents can be deleted."
+      "description": "DID method's capability to permanently remove a DID and its associated DID document from the underlying system, rendering the identifier and its historical metadata irrecoverable."
     },
     "fees": {
       "type": "boolean",
       "title": "Explicit Fees",
-      "description": "Creation, modification or deletion of identifiers require a transaction fee, e.g. blockchain-based DID methods often require transaction fees."
+      "description": "Indicates whether a DID method imposes mandatory transactional costs for creating, updating, or deactivating identifiers. These fees are typically associated with blockchain or distributed ledger-based methods, where computational resources and network consensus mechanisms necessitate economic compensation. "
     },
     "self-certifying": {
       "type": "boolean",
       "title": "Self-Certifying",
-      "description": "DID and the initial DID Document are cryptographically bound to one another, e.g. `did:key`."
+      "description": "DID method where the cryptographic material used to generate the DID is embedded within the identifier itself, creating an inherent and verifiable cryptographic binding between the DID, its initial DID document, and the associated cryptographic keys. This approach eliminates the need for external verification infrastructure, as the identifier's authenticity can be cryptographically validated through its own intrinsic key material."
     },
     "rotatable_keys": {
       "type": "boolean",
       "title": "Rotatable Keys",
-      "description": "The DID method supports rotation of keys to control the DID."
+      "description": "Verification methods are modifiable, allowing cryptographic keys can be replaced or updated, see https://w3c.github.io/did-core/#verification-methods."
     },
-    "pre-rotatable_keys": {
+    "pre-rotation_of_keys": {
       "type": "boolean",
-      "title": "Pre-Rotatable Keys",
-      "description": "Cryptographic keys can be pre-rotated to combat key loss and attacks by quantum computers. - Comment by Juan: one thing working with the KERI WG at DIF taught me was that there are like 10 different capabilities/flows that people refer to when they mean rotation. rotation in case of key exfiltration? manual rotation by controller? regular/automated rotation NOT requiring manual controller intervention?"
+      "title": "Pre-rotation of Keys",
+      "description": "Cryptographic mechanism that enables a DID controller to securely commit to a future key rotation without revealing the actual replacement public key. This technique creates a verifiable, one-way commitment to the next cryptographic key pair, preventing malicious actors who compromise the current private key from arbitrarily rotating to a new key of their choosing."
     },
     "modifiable_multi-sig": {
       "type": "boolean",
@@ -65,17 +65,17 @@
       "title": "Enumerable",
       "description": "All DIDs of this method can be enumerated, i.e. a public registry like a DLT exists that references all existing DIDs."
     },
-    "locally_resolvable": {
+    "resolvable_locally": {
       "type": "boolean",
       "title": "Locally Resolvable",
       "description": "DID documents can be resolved in an ephameral local context, e.g. `did:peer`."
     },
-    "globally_resolvable": {
+    "resolvable_globally": {
       "type": "boolean",
       "title": "Globally Resolvable",
       "description": "DID documents can be resolved globally."
     },
-    "documents": {
+    "hosted_documents": {
       "type": "boolean",
       "title": "Documents Hosting",
       "description": "Additional documents can be hosted with the DID Document and dereferenced via DID paths."
@@ -90,17 +90,17 @@
       "title": "Immutable DID Document History",
       "description": "Changes to DID Documents are persisted in an immutable data structure, e.g. a DLT."
     },
-    "not_hosted": {
+    "hosted_not": {
       "type": "boolean",
       "title": "Not Hosted",
       "description": "No hosting of DID Document required, e.g. ephameral `did:key` documents."
     },
-    "centrally_hosted": {
+    "hosted_centrally": {
       "type": "boolean",
       "title": "Centrally Hosted",
       "description": "Hosted on a centralized service, e.g. a web server."
     },
-    "decentrally_hosted": {
+    "hosted_decentrally": {
       "type": "boolean",
       "title": "Decentrally Hosted",
       "description": "Hosted on a decentralized service, e.g. a DLT."
